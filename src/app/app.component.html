@@ -1,0 +1,37 @@
+<h2>Curso de Angular</h2>
+
+<app-meu-primeiro></app-meu-primeiro>
+
+
+{{ title }}
+
+<p class="{{cor}}" > Meu parágrafo </p>
+
+<p [class]="cor" > Meu parágrafo </p>
+
+<!-- <p class="vermelho" > Meu parágrafo </p> -->
+
+<button (click)="botaoClick()" >Enviar</button>
+
+<!-- <input type="text" (keyup)="inputKeyUp($event)"> -->
+
+<!-- <p>
+  {{ valorDigitado }}
+</p> -->
+
+<input type="text" [(ngModel)]="valorDigitado" >
+
+<p>
+  {{ getValor() }}
+</p>
+
+<h2>Exercício do CPF:</h2>
+<p>
+  <label >CPF:</label>
+  <input type="text" [(ngModel)]="cpfDigitado" (blur)="onCpfBlur()">
+</p>
+
+<p *ngIf="msgCpf !='' ">
+  {{ msgCpf }}
+</p>
+

@@ -1,0 +1,19 @@
+<p>listar-usuarios works!</p>
+
+<table class="table">
+    <tr>
+        <th>Nome</th>
+        <th>Sobrenome</th>
+        <th>Idade</th>
+    </tr>
+
+    <tr *ngfor="let dados of usuarios">
+        <td>{{dados.nome}}</td>
+        <td>{{dados.sobrenome}}</td>
+        <td>{{dados.idade}}</td>
+    <td>
+
+         <span *ngIf="dados.idade <= 15" style="background-color: blue;">{{ dados.idade }}</span>
+         <span *ngIf="dados.idade > 15" style="background-color: red;">{{ dados.idade }}</span>
+    </td>
+</table>
