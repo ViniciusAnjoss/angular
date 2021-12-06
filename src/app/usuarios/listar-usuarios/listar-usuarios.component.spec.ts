@@ -1,25 +1,35 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component, OnInit } from '@angular/core';
 
-import { ListarUsuariosComponent } from './listar-usuarios.component';
+@Component({
+  selector: 'app-listar-usuarios',
+  templateUrl: './listar-usuarios.component.html',
+  styleUrls: ['./listar-usuarios.component.css'],
+})
+export class ListarUsuariosComponent implements OnInit {
 
-describe('ListarUsuariosComponent', () => {
-  let component: ListarUsuariosComponent;
-  let fixture: ComponentFixture<ListarUsuariosComponent>;
+  usuarioSelecionadoPai = null;
+  seEhMaiorQue18: boolean = false;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ListarUsuariosComponent ]
-    })
-    .compileComponents();
-  });
+  usuarios = [
+    { nome: "João", sobrenome: "Silva", idade: 33, nascimento : '1988-05-02' },
+    { nome: "Arnaldo", sobrenome: "Lima", idade: 26, nascimento : '1996-09-04' },
+    { nome: "José", sobrenome: "Pereira", idade: 24, nascimento : '1998-10-01' }
+  ];
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ListarUsuariosComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  constructor() {
+  }
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+  ngOnInit(): void {
+  }
+
+  onUsuarioClick(dados : any){
+    console.log(dados);
+    this.usuarioSelecionadoPai = dados;
+  }
+
+  metodoDoPai(evento : any){
+    console.log('método do pai....', evento);
+    this.seEhMaiorQue18 = evento;
+  }
+
+}

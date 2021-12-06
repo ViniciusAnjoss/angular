@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  templateUrl: './app.Component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
@@ -39,10 +39,6 @@ export class AppComponent {
     }
     else {
       this.msgCpf = 'CPF não é válido';
-    }
-
-    if (this.cpfDigitado == ''){
-      this.msgCpf = ''
     }
 
     //this.msgCpf = (cpfValido ? 'CPF é Válido': 'CPF não é válido');
