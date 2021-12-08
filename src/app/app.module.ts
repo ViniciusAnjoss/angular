@@ -7,7 +7,8 @@ import { AppComponent } from './app.component';
 import { MeuPrimeiroComponent } from './meu-primeiro/meu-primeiro.component';
 import { PokemonsModule } from './pokemons/pokemons.module';
 import {IMaskModule} from 'angular-imask';
-import { DetalhePokemonsComponent } from './pokemons/detalhes-pokemons/detalhes-pokemons.component';
+import { ProfessoresModule } from './professores/professores.module';
+import { UsuariosModule } from './usuarios/usuarios.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,9 @@ import { DetalhePokemonsComponent } from './pokemons/detalhes-pokemons/detalhes-
     AppRoutingModule,
     FormsModule,
     PokemonsModule,
-    IMaskModule
+    UsuariosModule,
+    IMaskModule,
+    ProfessoresModule
   ],
   providers: [],
   bootstrap: [AppComponent]

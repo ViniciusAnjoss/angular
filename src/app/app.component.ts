@@ -2,16 +2,20 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.Component.html',
+  templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'curso de angular';
-  nome = 'Fabrizio';
+  nome = 'Vinicius';
   cor = 'vermelho';
   valorDigitado = '';
   cpfDigitado : string = '';
   msgCpf : string = '';
+  public mask: any = {
+    mask: '+{7} (000) 000-00-00',
+    lazy: false
+  };
 
   botaoClick() {
     alert('Uma mensagem');
@@ -44,6 +48,7 @@ export class AppComponent {
     //this.msgCpf = (cpfValido ? 'CPF é Válido': 'CPF não é válido');
 
   }
+  
 
   testaCPF(strCPF: string) {
     var Soma;
@@ -65,4 +70,6 @@ export class AppComponent {
     if (Resto != parseInt(strCPF.substring(10, 11))) return false;
     return true;
   }
+
+
 }
