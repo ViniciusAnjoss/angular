@@ -1,25 +1,20 @@
 import { Directive, ElementRef, HostListener } from '@angular/core';
 
 @Directive({
-  selector: '[grifaTexto]'
+  selector: '[grifaTexto]',
 })
-
-
 export class GrifaTextoDirective {
-
-  @HostListener("mouseover") 
-  onMouseOver(){
-    console.log("mouse over");
+  @HostListener('mouseover')
+  onMouseover() {
     this.el.nativeElement.style.backgroundColor = 'yellow';
+    console.log('mouse over');
   }
-  @HostListener("mouseout")
-  onMouseOut(){
-    console.log("mouse out");
+  @HostListener('mouseout')
+  onMouseOut() {
+    console.log('mouse out');
     this.el.nativeElement.style.backgroundColor = 'white';
   }
 
-  constructor(private el : ElementRef) {
-  }
+  constructor(private el: ElementRef) {}
 }
-
 
