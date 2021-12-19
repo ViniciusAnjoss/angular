@@ -17,6 +17,7 @@ export class AppComponent {
     lazy: false
   };
 
+
   botaoClick() {
     alert('Uma mensagem');
     console.log(this.testaCPF('27999620098'))
@@ -70,6 +71,8 @@ export class AppComponent {
     if (Resto != parseInt(strCPF.substring(10, 11))) return false;
     return true;
   }
+
+  public paginaAtual =1;
 
 
 }

@@ -8,18 +8,36 @@ import { ProfessoresService } from '../professores.service';
 })
 export class ListarProfessoresComponent implements OnInit {
 
-  professores: any = null ;
+  professores : any ;
 
-  constructor(private professoresSevice:ProfessoresService) { }
+  constructor(private professorService:ProfessoresService) { 
+  }
 
   ngOnInit(): void {
-    this.professoresSevice.getAll()
+    this.retornarTodos();
+  }
+
+  onApagarClick(professor: any){
+    console.log(professor)
+    this.professorService.deletar(professor.id)
+      .subscribe(
+        ()=> {
+          //this.retornarTodos();
+          let index = this.professores.findIndex( (obj:any) =>  professor.id == obj.id );
+          this.professores.splice(index,1);
+          alert(`Professor ${professor.id} deletado com sucesso` );
+        }
+      );
+  }
+
+  retornarTodos(){
+    this.professorService.getAll()
     .subscribe(
-      (dados)=>{
-        console.log(dados)
-        this.professores = dados;
-      }
-    );
+        (dados)=>{
+          this.professores = dados;
+          //console.log(dados)
+        }
+      );
   }
 
 }

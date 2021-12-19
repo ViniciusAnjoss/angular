@@ -1,21 +1,69 @@
-<h2>Curso de Angular</h2>
+
+<!--<app-listar-pokemons></app-listar-pokemons> -->
+
+<!--<app-meu-primeiro></app-meu-primeiro> -->
 
 
-<app-meu-primeiro></app-meu-primeiro>
 
-<app-listar-pokemons></app-listar-pokemons>
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link"[routerLink]="['/']" routerLinkActive="active">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"[routerLink]="['/professores']" routerLinkActive="active">professores</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"[routerLink]="['/pokemons']" routerLinkActive="active">pokemons</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"[routerLink]="['/usuarios']" routerLinkActive="active">usuarios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"[routerLink]="['/formulario']" routerLinkActive="active">Formulario</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"[routerLink]="['/alunos']" routerLinkActive="active">alunos</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="pokemons">pokemons</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="primeiro">primeiro-componente</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
 
-<app-listar-usuarios></app-listar-usuarios>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+<!--<p class="{{ cor }}">Meu parágrafo</p> -->
 
-{{ title }}
-
-<p class="{{ cor }}">Meu parágrafo</p>
-
-<p [class]="cor">Meu parágrafo</p>
+<!--<p [class]="cor">Meu parágrafo</p> -->
 
 <!-- <p class="vermelho" > Meu parágrafo </p> -->
 
-<button (click)="botaoClick()">Enviar</button>
+<!-- <button (click)="botaoClick()">Enviar</button> -->
 
 <!-- <input type="text" (keyup)="inputKeyUp($event)"> -->
 
@@ -23,22 +71,22 @@
   {{ valorDigitado }}
 </p> -->
 
-<input type="text" [(ngModel)]="valorDigitado" />
-
-<p>
-  {{ valorDigitado + 60 }}
-</p>
-
-<p>
-  {{ getValor() }}
-</p>
-
-<h2>Exercício do CPF:</h2>
-<p>
-  <label>CPF:</label>
-  <input type="text" [(ngModel)]="cpfDigitado" (blur)="onCpfBlur()" />
-</p>
-
+<!--<input type="text" [(ngModel)]="valorDigitado" />
+  
+  <p>
+    {{ valorDigitado + 60 }}
+  </p>
+  
+  <p>
+    {{ getValor() }}
+  </p>
+  
+  <h2>Exercício do CPF:</h2>
+  <p>
+    <label>CPF:</label>
+    <input type="text" [(ngModel)]="cpfDigitado" (blur)="onCpfBlur()" />
+  </p>
+  
 <p *ngIf="msgCpf != ''">
   {{ msgCpf }}
 </p>
@@ -46,3 +94,5 @@
 <input [imask]="mask" [unmask]="true" />
 
 <app-listar-professores></app-listar-professores>
+-->
+<!--{{ title }} -->

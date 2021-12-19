@@ -11,4 +11,8 @@ export class PokemonsService {
   getAll(){
     return this.http.get("https://pokeapi.co/api/v2/pokemon");
   }
+
+  getPaginado(offset: number, limit: number){
+    return this.http.get('https://pokeapi.co/api/v2/pokemon?offset='+offset+'&limit='+limit);
+  }
 }

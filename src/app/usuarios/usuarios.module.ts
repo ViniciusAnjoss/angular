@@ -6,6 +6,7 @@ import { DetalheUsuarioComponent } from './detalhes-usuario/detalhes-usuario.com
 import { CpfPipe } from '../shared/pipes/cpf.pipe';
 //import { GrifaTextoDirective } from '../shared/diretivas/grifa-texto.directive';
 import { SharedModule } from '../shared/shared.module';
+import { UsuariosRoutingModule } from './listar-usuarios/usuarios-routing.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SharedModule } from '../shared/shared.module';
   ],
   imports: [
     CommonModule, 
-    SharedModule
+    SharedModule,
+    UsuariosRoutingModule
   ],
   exports: [
     ListarUsuariosComponent,

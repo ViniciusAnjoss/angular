@@ -3,21 +3,19 @@ import { CommonModule } from '@angular/common';
 import { ListarPokemonsComponent } from './listar-pokemons/listar-pokemons.component';
 import { DetalhePokemonsComponent } from './detalhes-pokemons/detalhes-pokemons.component';
 import { SharedModule } from '../shared/shared.module';
-
-
+import { PokemonsRoutingModule } from './pokemons-routing.module';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
-  declarations: [
-    ListarPokemonsComponent,
-    DetalhePokemonsComponent
-  ],
+  declarations: [ListarPokemonsComponent, DetalhePokemonsComponent],
   imports: [
     CommonModule,
-    //HttpClientModule
-    SharedModule
+    SharedModule,
+    PokemonsRoutingModule,
+    NgxPaginationModule,
+    BrowserModule,
   ],
-  exports:[
-    ListarPokemonsComponent
-  ]
+  exports: [ListarPokemonsComponent],
 })
-export class PokemonsModule { }
+export class PokemonsModule {}
