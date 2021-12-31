@@ -14,7 +14,6 @@ import { BrowserModule } from '@angular/platform-browser';
     SharedModule,
     PokemonsRoutingModule,
     NgxPaginationModule,
-    BrowserModule,
   ],
   exports: [ListarPokemonsComponent],
 })

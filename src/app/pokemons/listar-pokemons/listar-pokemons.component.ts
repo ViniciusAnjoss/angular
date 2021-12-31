@@ -107,6 +107,6 @@ export class ListarPokemonsComponent implements OnInit {
     // }
 
     paginas = (total % this.limit == 0) ? total/this.limit : total/this.limit + 1;
-   
+
   }
 }

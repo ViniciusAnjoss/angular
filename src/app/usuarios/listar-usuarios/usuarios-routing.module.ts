@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListarUsuariosComponent } from './listar-usuarios.component';
 const routes: Routes = [
-    { path : 'usuarios' , component: ListarUsuariosComponent}
+    { path : '' , component: ListarUsuariosComponent}
 ];
 
 @NgModule({

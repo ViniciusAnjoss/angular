@@ -40,13 +40,14 @@ export class MeuFormComponent implements OnInit {
 
   onSubmit(){
     console.log(this.meuForm.value)
-    this.FormulariosService.save(this.meuForm.value)
+    this.FormulariosService.salvar(this.meuForm.value)
      .subscribe(
        (resposta: any)=>{
         console.log (resposta)
        }
      );
   }
+
 
 
 }

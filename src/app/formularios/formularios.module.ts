@@ -15,8 +15,9 @@ import { FormulariosService } from './formularios.service';
     CommonModule,
     FormulariosRoutingModule,
     SharedModule,
-    
-    
+
+
+
   ],
 })
 export class FormulariosModule { }

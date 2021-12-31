@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from './shared/services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,16 +9,29 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'curso de angular';
-  nome = 'Vinicius';
+  nome = 'Fabrizio';
   cor = 'vermelho';
   valorDigitado = '';
   cpfDigitado : string = '';
   msgCpf : string = '';
+
+  constructor(
+    public authService:AuthService,
+    private router:Router
+    ){
+
+  }
+
+  onSairClick(){
+    localStorage.removeItem('autenticado');
+    localStorage.removeItem('localFrontend');
+    this.router.navigate(['/'])
+  }
+
   public mask: any = {
     mask: '+{7} (000) 000-00-00',
     lazy: false
   };
-
 
   botaoClick() {
     alert('Uma mensagem');
@@ -37,6 +52,8 @@ export class AppComponent {
   }
 
   onCpfBlur(){
+    console.log(this.cpfDigitado, this.cpfDigitado == '')
+
     let cpfValido = this.testaCPF( this.cpfDigitado );
 
     if (cpfValido){
@@ -46,10 +63,16 @@ export class AppComponent {
       this.msgCpf = 'CPF não é válido';
     }
 
+
+
+
+    // if (this.cpfDigitado == ''){
+    //   this.msgCpf = ''
+    // }
+
     //this.msgCpf = (cpfValido ? 'CPF é Válido': 'CPF não é válido');
 
   }
-  
 
   testaCPF(strCPF: string) {
     var Soma;
@@ -71,8 +94,4 @@ export class AppComponent {
     if (Resto != parseInt(strCPF.substring(10, 11))) return false;
     return true;
   }
-
-  public paginaAtual =1;
-
-
 }
